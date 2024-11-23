@@ -4,8 +4,8 @@ from nltk.chat.util import Chat, reflections
 # jsondan veri alma
 def get_info(konu):
     try:
-        with open('database.json', 'r', encoding='utf-8') as f:
-            data = json.load(f)
+        with open('database.json', 'r', encoding='utf-8') as dosya:
+            data = json.load(dosya)
             return str(data.get(konu, "Bu konuda bilgi bulunmamaktadır."))
     except FileNotFoundError:
         return "Veri dosyası bulunamadı."
@@ -27,11 +27,10 @@ patterns = [
 
     (r'^(merhaba|selam|merhabalar|nesin sen|sen nesin|adın ne|selamlar|naber|nabersin)$',x4),
 
-    (r'(.*)$', 
-     lambda x: "Üzgünüm, bu konuda bilgi veremiyorum. Başka bir konu hakkında sorunuz varsa, size yardımcı olabilirim.")
+    (r'(.*)$',"Üzgünüm, bu konuda bilgi veremiyorum. Başka bir konu hakkında sorunuz varsa, size yardımcı olabilirim.")
 ]
 
-# Chatbot oluşturulması
+# Chatbot oluşturma
 chatbot = Chat(patterns, reflections)
 
 #### Ana döngü ####
@@ -43,5 +42,5 @@ while True:
         print("Chatbot: Görüşmek üzere!")
         break
     else:
-        output = chatbot.respond(user_input)
-        print(f"Chatbot: {output}")
+        outpt = chatbot.respond(user_input)
+        print(f"Chatbot: {outpt}")
