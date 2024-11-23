@@ -1,10 +1,10 @@
 import module
 
 while True:
-    print("Parolanızın güvenliğini kontrol etmek için 1")
+    print("\nParolanızın güvenliğini kontrol etmek için                   1")
     print("Parolanızın veri ihlallerinde açığa çıktığını sorulamak için 2")
-    print("SGüçlü parola önerisi için 3")
-    user_input = input("Uygulamadan çıkış yapmak için 4 tuşlayınız\n>>>")
+    print("Güçlü parola önerisi için                                    3")
+    user_input = input("Uygulamadan çıkış yapmak için                                4\ntuşlayınız\n>>> ")
     
     # Parola Güvenlik kontrolü
     if user_input == "1":
@@ -25,7 +25,7 @@ while True:
         if karakter:
             deger += 3
 
-        print(f"Parolanızın güvenlik düzeyi: {deger} / 10\n")
+        print(f"Parolanızın güvenlik düzeyi: {deger}/10")
 
         if deger == 0:
             print("[_ _ _ _ _ _ _ _ _ _]")
@@ -58,15 +58,15 @@ while True:
             print("\nParolanız çok zayıf. Lütfen aşağıdaki önerilere dikkat ederek farklı bir parola belirleyiniz!")
         
         if not uzunluk:
-            print(f"\nParolanız en az 12 karakter uzunluğunda olmalıdır! Sizin parolanız ise {parola_uzunlugu} uzunluğunda.")
+            print(f"\n  ---Parolanız en az 12 karakter uzunluğunda olmalıdır! Sizin parolanız ise {parola_uzunlugu} uzunluğunda.")
         if not kucuk_harf:
-            print("\nParolanız küçük harf içermelidir!")
+            print("\n   ---Parolanız küçük harf içermelidir!")
         if not buyuk_harf:
-            print("\nParolanız büyük harf içermelidir!")
+            print("\n   ---Parolanız büyük harf içermelidir!")
         if not sayi:
-            print("\nParolanız sayı içermelidir!")
+            print("\n   ---Parolanız sayı içermelidir!")
         if not karakter:
-            print("\nParolanız özel karakter içermelidir!")
+            print("\n   ---Parolanız özel karakter içermelidir!")
 
     # Parola pwned kontrolü
     elif user_input == "2":
@@ -74,14 +74,14 @@ while True:
         is_pwn = module.check(parola)
 
         if not is_pwn:
-            print("Parolanız şu ana kadarki hiçbir veri ihlalinde açığa çıkmamış. Parolanız güvende.")
+            print("\nParolanız şu ana kadarki hiçbir veri ihlalinde açığa çıkmamış. Parolanız güvende.")
         else:
-            print("Eyvah! Görünüşe göre parolanız bir veri ihlalinde ortaya çıkarılmış. Bu parolayı değiştirmeniz şiddetle tavsiye edilir!")
+            print("\nEyvah! Görünüşe göre parolanız bir veri ihlalinde ortaya çıkarılmış. Bu parolayı değiştirmeniz şiddetle tavsiye edilir!")
 
     # Parola önerisi
     elif user_input == "3":
         oneri = module.generate_password()
-        print(f"Güçlü parola: {oneri}")
+        print(f"\nGüçlü parola: {oneri}")
 
     # Çıkış   
     elif user_input == "4":
@@ -90,5 +90,5 @@ while True:
 
     # Hatalı sayı girişi 
     else:
-        print("Lütfen geçerli bir sayı giriniz!!!")
+        print("\nLütfen geçerli bir sayı giriniz!!!")
 
