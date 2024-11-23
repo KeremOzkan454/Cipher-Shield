@@ -1,9 +1,9 @@
 {
-    "Şifre Güvenliği": "Güçlü şifreler kullanın, büyük/küçük harf, rakam ve özel karakterler içersin.",
+    "şifre güvenliği": "Güçlü şifreler kullanın, büyük/küçük harf, rakam ve özel karakterler içersin.",
     
-    "Veri İhlali": "Hesaplarınızı düzenli olarak kontrol edin ve şüpheli aktiviteleri hemen rapor edin.",
+    "veri ihlali": "Hesaplarınızı düzenli olarak kontrol edin ve şüpheli aktiviteleri hemen rapor edin.",
     
-    "Çift Faktörlü Doğrulama": "Hesaplarınızda mümkünse çift faktörlü doğrulama etkinleştirin.",
+    "çift faktörlü doğrulama": "Hesaplarınızda mümkünse çift faktörlü doğrulama etkinleştirin.",
 
-    "Merhaba" : "Merhaba! Ben, veri güvenliği konusunda size yardımcı olacak bir yapay zekayım. Nasıl yardımcı olabilirim?"
+    "merhaba" : "Merhaba! Ben, veri güvenliği konusunda size yardımcı olacak bir yapay zekayım. Nasıl yardımcı olabilirim?"
 }
