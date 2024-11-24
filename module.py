@@ -12,10 +12,10 @@ def password_control(parola):
 
     return uzunluk, kucuk_harf, buyuk_harf, sayi, karakter
 
-def check(parola):
+def check(parola,file):
     pwned = False
 
-    with open("pwned.txt", "r", encoding="ISO-8859-1") as dosya:
+    with open(file, "r", encoding="ISO-8859-1") as dosya:
         for satır in dosya:
             if satır.strip() == str(parola):
                 pwned = True

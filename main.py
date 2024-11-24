@@ -71,7 +71,7 @@ while True:
     # Parola pwned kontrolü
     elif user_input == "2":
         parola = input("Parolanızı giriniz >>> ")
-        is_pwn = module.check(parola)
+        is_pwn = module.check(parola,"pwned.txt")
 
         if not is_pwn:
             print("\nParolanız şu ana kadarki hiçbir veri ihlalinde açığa çıkmamış. Parolanız güvende.")
