@@ -1,10 +1,12 @@
 import module
+import os
 
 while True:
     print("\nParolanızın güvenliğini kontrol etmek için                   1")
     print("Parolanızın veri ihlallerinde açığa çıktığını sorulamak için 2")
     print("Güçlü parola önerisi için                                    3")
-    user_input = input("Uygulamadan çıkış yapmak için                                4\ntuşlayınız\n>>> ")
+    print("Parola Kasanıza erişmek için                                 4")
+    user_input = input("Uygulamadan çıkış yapmak için                                5\ntuşlayınız\n>>> ")
     
     # Parola Güvenlik kontrolü
     if user_input == "1":
@@ -83,8 +85,31 @@ while True:
         oneri = module.generate_password()
         print(f"\nGüçlü parola: {oneri}")
 
-    # Çıkış   
+    # Cipher Vault'a erişim
     elif user_input == "4":
+        print("Tekrar görüşmek dileğiyle...")
+        isVault_password = os.path.exists("VaultPass.txt")
+        if isVault_password:
+            Vault_password_input = input("Kasa parolanızı giriniz >>> ")
+            isReal = module.check_vault_password(Vault_password_input)
+            if isReal:
+                key = module.create_or_load_key()
+                save_or_load_input = input("Parolalarınızı görüntülemek içi 1\nParola kaydetmek için 2 tuşlayınız >>> ")
+                if save_or_load_input == "1":
+                    passwords = module.load_passwords(key)
+                    print(passwords)
+                elif save_or_load_input == "2":
+                    new_user_name = input("Kaydetmek istediğiniz kullanıcı adını giriniz >>> ")
+                    new_password= = input(f"{new_user_name} adına kaydetmek istediğiniz parolayı giriniz >>> ")
+                    module.save_password(new_user_name,new_password)  
+                    print("Parolanız başarıyla kaydedildi!")    
+                else: 
+                    print("Lütfen geçerli bir sayı giriniz!!!")
+            else:
+                print("Girdiğiniz kasa parolası hatalı.")
+        
+    # Çıkış   
+    elif user_input == "5":
         print("Tekrar görüşmek dileğiyle...")
         break
 
