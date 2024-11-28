@@ -1,7 +1,6 @@
 import re
 import random
 import string
-import cryptography
 from cryptography.fernet import Fernet
 import os
 
@@ -50,38 +49,51 @@ def generate_password(leng=16):
 
 # fernet olayları
 def create_or_load_key():
-    isKey = os.path.exists("key.key")
-    if isKey:
-        with open("key.key","rb") as key:
-            Key = key.read()
+    if os.path.exists("data/key.key"):
+        with open("data/key.key", "rb") as key_file:
+            Key = key_file.read()
     else:
-        with open("key.key","rw") as key:
-            Key = Fernet.generate_key()
-            key.write(Key)
+        Key = Fernet.generate_key()
+        with open("data/key.key", "wb") as key_file:
+            key_file.write(Key)
     return Key
 
-def save_password(user_name,password):
-    with open("Vault.txt","w") as kasa:
-        encrytep_password = Fernet.encrypt(password)
-        kasa.write(f"{user_name},{encrytep_password}\n")
+def save_password(user_name, password, key):
+    Fernet_key = Fernet(key)
+    encrypted_password = Fernet_key.encrypt(password.encode())
+    with open("data/Vault.txt", "a") as kasa:
+        kasa.write(f"{user_name},{encrypted_password.decode()}\n")
 
 def load_passwords(key):
-    with open("Vault.txt","r") as kasa:
-        user_name,encrypted_password = kasa.read().strip().split()
-        decrypted_password = Fernet.decrypt(encrypted_password.encode(),key)
-        print(f"{user_name}  {decrypted_password.encode()}")
+    fernet_key = Fernet(key)
+    with open("data/Vault.txt", "r") as kasa:
+        for line in kasa:
+            user_name, encrypted_password = line.strip().split(",")
+            decrypted_password = fernet_key.decrypt(encrypted_password.encode())
+            print(f"Kullanıcı: {user_name}, Şifre: {decrypted_password.decode()}")
+
         
 
 
 # Vault acces olayları    
 def write_vault_password(password):
-    with open("VaultPass.txt","rw") as file:
+    with open("data/VaultPass.txt","wb") as file:
         file.write(password)
 
 def check_vault_password(password):
-    with open("VaultPass.txt","r") as file:
+    with open("data/VaultPass.txt","r") as file:
         true_password = file.read()
-        if password == true_password:
+        if password.encode() == true_password.encode():
             return True
         else:
             return False
+        
+def create_vault():
+    isVault = os.path.exists("data/Vault.txt")
+    if isVault:
+        with open("data/Vault.txt","r"):
+            return
+        
+    else:
+        return
+    

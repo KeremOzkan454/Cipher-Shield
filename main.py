@@ -1,4 +1,4 @@
-import module
+import main_module
 import os
 
 while True:
@@ -12,7 +12,7 @@ while True:
     if user_input == "1":
 
         parola = input("Parolanızı giriniz >>> ")
-        uzunluk, kucuk_harf, buyuk_harf, sayi, karakter = module.password_control(parola)
+        uzunluk, kucuk_harf, buyuk_harf, sayi, karakter = main_module.password_control(parola)
         parola_uzunlugu = len(parola)
         deger = 0
 
@@ -73,7 +73,7 @@ while True:
     # Parola pwned kontrolü
     elif user_input == "2":
         parola = input("Parolanızı giriniz >>> ")
-        is_pwn = module.check(parola,"pwned.txt")
+        is_pwn = main_module.check(parola,"data/pwned.txt")
 
         if not is_pwn:
             print("\nParolanız şu ana kadarki hiçbir veri ihlalinde açığa çıkmamış. Parolanız güvende.")
@@ -82,31 +82,34 @@ while True:
 
     # Parola önerisi
     elif user_input == "3":
-        oneri = module.generate_password()
+        oneri = main_module.generate_password()
         print(f"\nGüçlü parola: {oneri}")
 
     # Cipher Vault'a erişim
     elif user_input == "4":
-        print("Tekrar görüşmek dileğiyle...")
-        isVault_password = os.path.exists("VaultPass.txt")
+        isVault_password = os.path.exists("data/VaultPass.txt")
         if isVault_password:
             Vault_password_input = input("Kasa parolanızı giriniz >>> ")
-            isReal = module.check_vault_password(Vault_password_input)
+            isReal = main_module.check_vault_password(Vault_password_input)
             if isReal:
-                key = module.create_or_load_key()
+                key = main_module.create_or_load_key()
                 save_or_load_input = input("Parolalarınızı görüntülemek içi 1\nParola kaydetmek için 2 tuşlayınız >>> ")
                 if save_or_load_input == "1":
-                    passwords = module.load_passwords(key)
+                    passwords = main_module.load_passwords(key)
                     print(passwords)
                 elif save_or_load_input == "2":
+                    key = main_module.create_or_load_key()
                     new_user_name = input("Kaydetmek istediğiniz kullanıcı adını giriniz >>> ")
-                    new_password= = input(f"{new_user_name} adına kaydetmek istediğiniz parolayı giriniz >>> ")
-                    module.save_password(new_user_name,new_password)  
+                    new_password = input(f"{new_user_name} adına kaydetmek istediğiniz parolayı giriniz >>> ")
+                    main_module.save_password(new_user_name,new_password,key)  
                     print("Parolanız başarıyla kaydedildi!")    
                 else: 
                     print("Lütfen geçerli bir sayı giriniz!!!")
             else:
                 print("Girdiğiniz kasa parolası hatalı.")
+        else:
+            vault_password_input = input("Daha önce kasa oluşturmamışsınız\nLütfen önce bir kasa parolası belirleyiniz >>> ")
+            main_module.write_vault_password(vault_password_input)
         
     # Çıkış   
     elif user_input == "5":
