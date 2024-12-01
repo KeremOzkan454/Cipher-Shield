@@ -1,0 +1,123 @@
+{
+    "merhaba": [
+        "Merhaba! Ben, veri güvenliği konusunda size yardımcı olacak bir yapay zekayım. Nasıl yardımcı olabilirim?",
+        "Selam! Siber güvenlik konusunda merak ettiğiniz bir şey varsa sorabilirsiniz.",
+        "Hoş geldiniz! Size siber güvenlik ipuçları vermemi ister misiniz?."
+    ],
+    
+    "şifre güvenliği": [
+        "Güçlü şifreler oluşturun; en az 12 karakter, büyük/küçük harf, rakam ve özel karakter içermelidir.",
+        "Şifrelerinizi düzenli olarak değiştirin.",
+        "Aynı şifreyi birden fazla hesapta kullanmaktan kaçının."
+    ],
+
+    "veri ihlali": [
+        "Veri ihlalleri sırasında hesaplarınızı hemen kontrol edin ve şüpheli aktiviteleri rapor edin.",
+        "Kullanmadığınız hesapları kapatın.",
+        "Hesaplarınızda çift faktörlü doğrulamayı etkinleştirin."
+    ],
+
+    "çift faktörlü doğrulama": [
+        "Hesaplarınızda mümkünse çift faktörlü doğrulama (2FA) etkinleştirin.",
+        "SMS tabanlı doğrulama yerine uygulama tabanlı doğrulama kullanmayı tercih edin.",
+        "Çift faktörlü doğrulama yedek kodlarınızı güvenli bir yerde saklayın."
+    ],
+
+    "phishing": [
+        "E-posta veya mesajlarda gelen linklere dikkat edin, adresleri kontrol edin.",
+        "Şüpheli e-postalara yanıt vermeyin ve içindeki linklere tıklamayın.",
+        "Resmi bir kaynaktan geldiğinden emin olmadığınız sürece kimlik bilgilerinizi paylaşmayın."
+    ],
+
+    "veri güvenliği": [
+        "Kritik verilerinizi düzenli olarak yedekleyin.",
+        "Özel dosyalarınızı bulutta şifrelenmiş olarak saklayın.",
+        "Hassas bilgilerinizi asla herkese açık Wi-Fi ağlarında paylaşmayın."
+    ],
+
+    "güncellemeler": [
+        "Cihazlarınızdaki yazılımları düzenli olarak güncelleyin.",
+        "Otomatik güncellemeleri etkinleştirerek güvenlik açıklarını minimize edin.",
+        "Eski yazılımları kaldırarak cihazınızı koruyun."
+    ],
+
+    "antivirüs": [
+        "Cihazlarınıza güvenilir bir antivirüs yazılımı yükleyin.",
+        "Antivirüs taramalarını düzenli olarak çalıştırın.",
+        "Antivirüs programınızı güncel tutmayı unutmayın."
+    ],
+
+    "kötü amaçlı yazılımlar": [
+        "Bilinmeyen kaynaklardan gelen dosyaları açmayın.",
+        "Güvenli olmayan web sitelerinden yazılım indirmekten kaçının.",
+        "Kötü amaçlı yazılımlardan korunmak için güvenilir bir güvenlik duvarı kullanın."
+    ],
+
+    "sosyal mühendislik": [
+        "Telefonla kimlik bilgilerinizi isteyen aramalara karşı dikkatli olun.",
+        "Sosyal medya platformlarında özel bilgilerinizi paylaşmayın.",
+        "Gerçek olamayacak kadar iyi tekliflere şüpheyle yaklaşın."
+    ],
+
+    "şifre yöneticileri": [
+        "Güvenli bir şifre yöneticisi kullanarak şifrelerinizi saklayın.",
+        "Şifre yöneticinizin yedekleme özelliğini etkinleştirin.",
+        "Ana şifrenizi düzenli olarak kontrol edin."
+    ],
+
+    "tarayıcı güvenliği": [
+        "Tarayıcı eklentilerini düzenli olarak güncelleyin ve kullanmadıklarınızı kaldırın.",
+        "HTTPS protokolü kullanmayan web sitelerinden uzak durun.",
+        "Çerezleri ve geçmişi düzenli olarak temizleyin."
+    ],
+
+    "e-posta güvenliği": [
+        "Bilmediğiniz kişilerden gelen e-postaları açmayın.",
+        "E-posta eklerini taramadan indirmeyin.",
+        "E-posta adresinizi yalnızca güvenilir platformlarda paylaşın."
+    ],
+
+    "bulut depolama güvenliği": [
+        "Bulut hesabınıza giriş yapmak için güçlü şifreler kullanın.",
+        "Hassas dosyalarınızı buluta yüklerken şifreleyin.",
+        "Bulut hizmetinin iki faktörlü doğrulama sunup sunmadığını kontrol edin."
+    ],
+
+    "Wi-Fi güvenliği": [
+        "Halka açık Wi-Fi ağlarında VPN kullanın.",
+        "Ev ağınızın şifresini karmaşık ve güvenli hale getirin.",
+        "Misafirler için ayrı bir ağ oluşturmayı düşünün."
+    ],
+
+    "kimlik avı saldırıları": [
+        "E-posta adreslerinin doğru yazıldığını kontrol edin.",
+        "Resmi kurumların sizden asla şifre istemeyeceğini unutmayın.",
+        "Kimlik avı girişimlerini hemen ilgili kurumlara bildirin."
+    ],
+
+    "güvenlik duvarı": [
+        "Güvenlik duvarınızı etkinleştirerek ağ trafiğini kontrol edin.",
+        "Güvenilmeyen uygulamaların güvenlik duvarını atlamasına izin vermeyin.",
+        "Güvenlik duvarı ayarlarını düzenli olarak gözden geçirin."
+    ],
+
+    "veri yedekleme": [
+        "Hassas verilerinizi düzenli olarak harici bir diske yedekleyin.",
+        "Veri yedeklerinizi şifreli bir biçimde saklayın.",
+        "Yedekleme planınızı haftalık veya aylık olarak ayarlayın."
+    ],
+
+    "siber saldırılar": [
+        "Şüpheli aktiviteler için ağ trafiğini izleyin.",
+        "Siber saldırı anında bir güvenlik uzmanına danışın.",
+        "Ağınıza yalnızca yetkili cihazların bağlandığından emin olun."
+    ],
+
+    "siber güvenlik": [
+        "Siber güvenlik, dijital sistemlerin, ağların, cihazların ve verilerin yetkisiz erişimden, saldırılardan ve hasardan korunmasıdır.",
+        "Siber güvenlik, kötü amaçlı yazılım, kimlik avı, fidye yazılımı gibi tehditlere karşı savunma stratejileri geliştirmeyi kapsar.",
+        "Kritik altyapıların korunması ve kişisel verilerin güvenliği, siber güvenliğin temel unsurlarıdır.",
+        "Günümüz dünyasında siber güvenlik, bireylerden büyük şirketlere kadar herkes için bir zorunluluktur.",
+        "Siber güvenlik, yalnızca teknolojik savunma sistemleri değil, aynı zamanda kullanıcı farkındalığını artırmayı da içerir."
+    ]
+}

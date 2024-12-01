@@ -1,4 +1,4 @@
-import main_module
+import modules.main_module as main_module
 import os
 
 while True:
