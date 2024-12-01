@@ -7,8 +7,8 @@ import os
 # Parola güç kontrolü
 def password_control(parola):
     uzunluk = len(parola) >= 12
-    kucuk_harf = bool(re.search(r"[a-z]", parola))
-    buyuk_harf = bool(re.search(r"[A-Z]", parola))
+    kucuk_harf = bool(re.search(r"[qwertyuıopğüasdfghjklşizxcvbnmöç]", parola))
+    buyuk_harf = bool(re.search(r"[QWERTYUIOPĞÜASDFGHJKLŞİZXCVBNMÖÇ]", parola))
     sayi = bool(re.search(r"[0-9]", parola))
     karakter = bool(re.search(r"[!@#$%^&*()_+]", parola))
 
@@ -78,12 +78,12 @@ def load_passwords(key):
 # Vault acces olayları    
 def write_vault_password(password):
     with open("data/VaultPass.txt","wb") as file:
-        file.write(password)
+        file.write(password.encode())
 
 def check_vault_password(password):
     with open("data/VaultPass.txt","r") as file:
         true_password = file.read()
-        if password.encode() == true_password.encode():
+        if password == true_password:
             return True
         else:
             return False

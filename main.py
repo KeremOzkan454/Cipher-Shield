@@ -93,7 +93,7 @@ while True:
             isReal = main_module.check_vault_password(Vault_password_input)
             if isReal:
                 key = main_module.create_or_load_key()
-                save_or_load_input = input("Parolalarınızı görüntülemek içi 1\nParola kaydetmek için 2 tuşlayınız >>> ")
+                save_or_load_input = input("Parolalarınızı görüntülemek içi 1\nParola kaydetmek için 2 tuşlayınız >>> \n")
                 if save_or_load_input == "1":
                     passwords = main_module.load_passwords(key)
                     print(passwords)
@@ -108,8 +108,24 @@ while True:
             else:
                 print("Girdiğiniz kasa parolası hatalı.")
         else:
-            vault_password_input = input("Daha önce kasa oluşturmamışsınız\nLütfen önce bir kasa parolası belirleyiniz >>> ")
+            vault_password_input = input("Daha önce kasa oluşturmamışsınız\nLütfen bir kasa parolası belirleyiniz \n>>> ")
+            main_module.create_vault()
             main_module.write_vault_password(vault_password_input)
+            key = main_module.create_or_load_key()
+            save_or_load_input = input("Parolalarınızı görüntülemek içi 1\nParola kaydetmek için 2 tuşlayınız >>> \n")
+            if save_or_load_input == "1":
+                isVault = os.path.exists("data/Vault.txt")
+                if isVault:
+                    passwords = main_module.load_passwords(key)
+                    print(passwords)
+                else:
+                    print("Henüz hiçbir şifre kaydetmemişsiniz.")
+            elif save_or_load_input == "2":
+                key = main_module.create_or_load_key()
+                new_user_name = input("Kaydetmek istediğiniz kullanıcı adını giriniz >>> ")
+                new_password = input(f"{new_user_name} adına kaydetmek istediğiniz parolayı giriniz >>> ")
+                main_module.save_password(new_user_name,new_password,key)  
+                print("Parolanız başarıyla kaydedildi!")    
         
     # Çıkış   
     elif user_input == "5":
