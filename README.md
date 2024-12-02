@@ -21,6 +21,7 @@ Not: Shield AI hala çalışmıyor...
 -------------------------
 27/11/2024 --- **Rapor** bayağı iyi gidiyor. Yöntem bölümünü neredeyse tamamen bitirdim. Giriş bölümüne eklemek için makaleler araştırıyorum şuan. Yarın umarım onları da ekleyebilirim.
 
+----------------------------
 30/11/2024 --- **main.py** 'a sonunda **CipherVault** özelliği ekleyebildim. Kullanıcının girdiği parolaları depo ediyor. Ve bu işlemi **Fernet** encrypt yöntemi ile yapıyor. Kısaca bir saldırgan parolaların depo edildiği dosyayı bulursa kişinin parolalarına erişemiyor. Oldukça güvenli...
 
 ------------------------------
