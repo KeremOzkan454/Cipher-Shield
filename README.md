@@ -1,9 +1,9 @@
 # Cipher Shield
 
-**Cipher Shield** kullanıcıya siber dünyada nasıl güvenli bir şekilde hareket edebileceğini öğretmeyi amaçlayan bir uygulamadır. **Password Control** özelliği ile şifrelerinizin güvenli olup olmadaığını kontrol edebilir, **Cipher Vault** özelliği ile de kullanıcı adı ve şifrelerinizi encrypt edilmiş bir kasada depo edip istediğiniz zaman erişebilirsiniz. Ayrıca Cipher Shield uygulaması, 7'den 77'ye her yaştaki insanlara dijital farkındalık kazandırmak için tasarlanmış bir yapay zeka ile donatılmıştır. **Shield AI** sayesinde bireyler siber güvenlik hakkında merka ettikleri sorulara cevap bulabileceklerdir.
+**Cipher Shield** kullanıcıya siber dünyada nasıl güvenli bir şekilde hareket edebileceğini öğretmeyi amaçlayan bir uygulamadır. **Password Control** özelliği ile şifrelerinizin güvenli olup olmadaığını kontrol edebilir, **Cipher Vault** özelliği ile de kullanıcı adı ve şifrelerinizi encrypt edilmiş bir kasada depo edip istediğiniz zaman erişebilirsiniz. Ayrıca Cipher Shield uygulaması, 7'den 77'ye her yaştaki insanlara dijital farkındalık kazandırmak için tasarlanmış bir yapay zeka ile donatılmıştır. **Shield AI** sayesinde bireyler siber güvenlik hakkında merak ettikleri sorulara cevap bulabileceklerdir.
 
 ---------------
-# Günlük:
+## Geliştirici Günlüğü:
 
 20/11/2024 --- **main.py** dosyasına temelleri attım. Parola güç kontrolü, pwned kontrolü yapıyor ve güçlü parola önerebiliyor.
 Daha çok iş var :/
