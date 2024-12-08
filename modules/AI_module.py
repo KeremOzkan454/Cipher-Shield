@@ -121,7 +121,7 @@ class ChatbotApp(QMainWindow):
         elif re.search(r"siber saldırılar|ağ saldırıları", user_input.lower()):
             response = get_info("siber saldırılar")
 
-        elif re.search(r"siber güvenlik|cyber security", user_input.lower()):
+        elif re.search(r"siber güvenlik|cyber security|siber güvenliğ", user_input.lower()):
             response = get_info("siber güvenlik")
             
         else:
