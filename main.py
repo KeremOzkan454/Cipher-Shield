@@ -130,6 +130,7 @@ while True:
                 main_module.save_password(new_user_name,new_password,key)  
                 print("Parolanız başarıyla kaydedildi!")    
         
+    # Shield AI'a erişim
     elif user_input == "5":
         while True:
             ai_input = input("Siz: ")
