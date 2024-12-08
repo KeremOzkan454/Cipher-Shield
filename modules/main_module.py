@@ -49,24 +49,24 @@ def generate_password(leng=16):
 
 # fernet olayları
 def create_or_load_key():
-    if os.path.exists("../data/key.key"):
-        with open("../data/key.key", "rb") as key_file:
+    if os.path.exists("data/key.key"):
+        with open("data/key.key", "rb") as key_file:
             Key = key_file.read()
     else:
         Key = Fernet.generate_key()
-        with open("../data/key.key", "wb") as key_file:
+        with open("data/key.key", "wb") as key_file:
             key_file.write(Key)
     return Key
 
 def save_password(user_name, password, key):
     Fernet_key = Fernet(key)
     encrypted_password = Fernet_key.encrypt(password.encode())
-    with open("../data/Vault.txt", "a") as kasa:
+    with open("data/Vault.txt", "a") as kasa:
         kasa.write(f"{user_name},{encrypted_password.decode()}\n")
 
 def load_passwords(key):
     fernet_key = Fernet(key)
-    with open("../data/Vault.txt", "r") as kasa:
+    with open("data/Vault.txt", "r") as kasa:
         for line in kasa:
             user_name, encrypted_password = line.strip().split(",")
             decrypted_password = fernet_key.decrypt(encrypted_password.encode())
@@ -77,11 +77,11 @@ def load_passwords(key):
 
 # Vault acces olayları    
 def write_vault_password(password):
-    with open("../data/VaultPass.txt","wb") as file:
+    with open("data/VaultPass.txt","wb") as file:
         file.write(password.encode())
 
 def check_vault_password(password):
-    with open("../data/VaultPass.txt","r") as file:
+    with open("data/VaultPass.txt","r") as file:
         true_password = file.read()
         if password == true_password:
             return True
@@ -89,11 +89,10 @@ def check_vault_password(password):
             return False
         
 def create_vault():
-    isVault = os.path.exists("../data/Vault.txt")
-    if isVault:
-        with open("../data/Vault.txt","r"):
-            return
-        
-    else:
+    with open("data/Vault.txt","wb"):
         return
-    
+
+def create_vault_pass():
+    with open("data/VaultPass.txt","wb"):
+        return
+

@@ -1,4 +1,5 @@
 import modules.main_module as main_module
+import modules.AI_module as AI_module
 import os
 
 while True:
@@ -6,7 +7,8 @@ while True:
     print("Parolanızın veri ihlallerinde açığa çıktığını sorulamak için 2")
     print("Güçlü parola önerisi için                                    3")
     print("Parola Kasanıza erişmek için                                 4")
-    user_input = input("Uygulamadan çıkış yapmak için                                5\ntuşlayınız\n>>> ")
+    print("ShieldAI ile konuşmak için                                   5")
+    user_input = input("Uygulamadan çıkış yapmak için                                6\ntuşlayınız\n>>> ")
     
     # Parola Güvenlik kontrolü
     if user_input == "1":
@@ -110,6 +112,7 @@ while True:
         else:
             vault_password_input = input("Daha önce kasa oluşturmamışsınız\nLütfen bir kasa parolası belirleyiniz \n>>> ")
             main_module.create_vault()
+            main_module.create_vault_pass()
             main_module.write_vault_password(vault_password_input)
             key = main_module.create_or_load_key()
             save_or_load_input = input("Parolalarınızı görüntülemek içi 1\nParola kaydetmek için 2 tuşlayınız >>> \n")
@@ -127,8 +130,17 @@ while True:
                 main_module.save_password(new_user_name,new_password,key)  
                 print("Parolanız başarıyla kaydedildi!")    
         
-    # Çıkış   
     elif user_input == "5":
+        while True:
+            ai_input = input("Siz: ")
+            response = AI_module.get_response(ai_input)
+            if not response:
+                break
+            else:
+                print(f"Shield AI: {response}")
+ 
+    # Çıkış   
+    elif user_input == "6":
         print("Tekrar görüşmek dileğiyle...")
         break
 
