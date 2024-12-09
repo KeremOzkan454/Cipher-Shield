@@ -30,3 +30,5 @@ Not: Shield AI hala çalışmıyor...
 
 ---------------------------------
 - 03/12/2024 --- **Shield AI'a GUI** ekledim. Çok kötü bir arayüz olmasına karşın çalışıyor. Yarın mümkünse main.py dosyasına da GUI eklemeyi deneyeceğim. 
+------------------------------
+- 08/12/2024 --- **GUI**'yi bir nedenden ötürü sildim. Çok kötü olması nedeniyle olabilir belki :) Birkaç bugfix yaptım ve kapatıyorum. Yarın umarım uygulamayı tam olarak bitiririm.
