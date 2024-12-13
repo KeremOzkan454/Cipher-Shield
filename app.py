@@ -112,8 +112,22 @@ class CipherShieldApp(QMainWindow):
     
     ## Kasaya erişim
     def access_vault(self):
-        QMessageBox.information(self, "Kasa", "Parola kasası şu anda desteklenmiyor. Bu özellik yakında eklenecek!")
-    
+        while True:
+            passwordExists = os.path.exists("data/VaultPass.txt")
+            if not passwordExists:
+                main_module.create_vault()
+                self.log_output.append("Lütfen bir kasa parolası belirleyiniz. Parolanızın güçlü olduğundan emin olunuz: ")
+                password = self.password_input.text()
+                if not password:
+                    QMessageBox.warning(self, "Hata", "Lütfen bir parola giriniz!")
+                else:
+                    main_module.create_vault_pass()
+                    main_module.write_vault_password(password)
+                        
+
+            else:
+                pass
+
     ## ShieldAI
     def start_ai_chat(self):
         QMessageBox.information(self, "Shield AI", "Shield AI sohbeti şu anda desteklenmiyor. Bu özellik yakında eklenecek!")
