@@ -36,3 +36,5 @@ Not: Shield AI hala çalışmıyor...
 - 10/12/2024 --- **Rapor** muhteşem olduu!!! Giriş bölümünü uzatabildiğim kadar uzattım. Artık benden bu kadar. Amaç bölümüne de birşeyler ekledim ve en kısa zamanda rapora son halini vereceğim.
 --------------------------------
 - 11/12/2024 --- **Programa GUI ekledim** sonunda. main.py dosyasını app.py dosyasına çevirdim çünkü ismi daha mantıklı geldi. Hala çok kötü bir arayüze sahip olamsına karşın işe yarıyor ve geliştirilmeye açık. (Bunu yarın yapabileceğimden emin değilim gerçi ama) en kısa zamanda GUI'ye Shield AI ile konuşma özelliğini entegre etmek istiyorum.
+-----------------------------------
+- 12/12/2024 --- **Programı birazcık geliştirdim**. Aslında anlatılacak pek birşey yok. GUI elemanlarından bazıları güzel gözükmüyordu onları düzelttim. Ayrıca yazı tipini "Calibri" yaptım.
