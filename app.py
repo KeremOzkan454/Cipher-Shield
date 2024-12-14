@@ -1,9 +1,9 @@
 import sys
-import os
 from PyQt5.QtWidgets import (
-    QApplication, QMainWindow, QPushButton, QVBoxLayout, QWidget, QLabel, QLineEdit, QTextEdit, QMessageBox
+    QApplication, QMainWindow, QTabWidget, QWidget, QVBoxLayout, QLabel, QLineEdit,
+    QPushButton, QTextEdit, QMessageBox
 )
-from PyQt5.QtGui import QFont
+from PyQt5.QtGui import QFont, QColor
 from PyQt5.QtCore import Qt
 import modules.main_module as main_module
 import modules.AI_module as AI_module
@@ -13,69 +13,92 @@ class CipherShieldApp(QMainWindow):
     def __init__(self):
         super().__init__()
         self.setWindowTitle("Cipher Shield")
-        self.setGeometry(200, 200, 800, 600)
-        
-        # Main Widget ve Layout
-        self.central_widget = QWidget()
-        self.layout = QVBoxLayout()
-        self.central_widget.setLayout(self.layout)
-        self.setCentralWidget(self.central_widget)
-        
-        # GUI elemanları
-        self.label = QLabel("Cipher Shield\nYour Digital Fortress")
-        self.label.setAlignment(Qt.AlignCenter)
-        self.label.setFont(QFont("Arial", 18, QFont.Bold))
-        self.layout.addWidget(self.label)
-        
+        self.setGeometry(100, 100, 900, 600)
+
+        # Sekmeler için Tab Widget
+        self.tabs = QTabWidget()
+        self.setCentralWidget(self.tabs)
+
+        # Sekmelerin eklenmesi
+        self.password_tab = PasswordControlTab()
+        self.vault_tab = CipherVaultTab()
+        self.shieldai_tab = ShieldAITab()
+
+        self.tabs.addTab(self.password_tab, "Password Control")
+        self.tabs.addTab(self.vault_tab, "CipherVault")
+        self.tabs.addTab(self.shieldai_tab, "ShieldAI")
+
+        # Tema renkleri
+        self.setStyleSheet("""
+            QTabWidget::pane {
+                border: 1px solid #5DADE2;
+                background: #EAF2F8;
+            }
+            QTabBar::tab {
+                background: #AED6F1;
+                color: black;
+                padding: 10px;
+                font: bold 14px;
+            }
+            QTabBar::tab:selected {
+                background: #5DADE2;
+                color: white;
+            }
+            QMainWindow {
+                background-color: #EAF2F8;
+            }
+        """)
+
+
+class PasswordControlTab(QWidget):
+    def __init__(self):
+        super().__init__()
+        layout = QVBoxLayout()
+
+        # Başlık
+        self.title = QLabel("Parola Güvenliği Kontrolü")
+        self.title.setAlignment(Qt.AlignCenter)
+        self.title.setFont(QFont("Arial", 18, QFont.Bold))
+        layout.addWidget(self.title)
+
+        # Parola girişi
+        self.password_input = QLineEdit()
+        self.password_input.setPlaceholderText("Parolanızı girin...")
+        self.password_input.setFont(QFont("Arial", 14))
+        layout.addWidget(self.password_input)
+
+        # Güvenlik kontrolü butonu
+        self.check_password_btn = QPushButton("Parola Güvenliğini Kontrol Et")
+        self.check_password_btn.setFont(QFont("Arial", 12))
+        self.check_password_btn.clicked.connect(self.check_password)
+        layout.addWidget(self.check_password_btn)
+
+        # Pwned kontrol butonu
+        self.pwned_check_btn = QPushButton("Veri İhlali Kontrolü")
+        self.pwned_check_btn.setFont(QFont("Arial", 12))
+        self.pwned_check_btn.clicked.connect(self.check_pwned)
+        layout.addWidget(self.pwned_check_btn)
+
+        # Güçlü parola önerisi butonu
+        self.generate_password_btn = QPushButton("Güçlü Parola Önerisi")
+        self.generate_password_btn.setFont(QFont("Arial", 12))
+        self.generate_password_btn.clicked.connect(self.generate_password)
+        layout.addWidget(self.generate_password_btn)
+
+        # Log ekranı
         self.log_output = QTextEdit()
         self.log_output.setReadOnly(True)
-        self.log_output.setFont(QFont("Calibri", 15))
-        self.layout.addWidget(self.log_output)
-        
-        self.password_input = QLineEdit()
-        self.password_input.setPlaceholderText("Parolanızı buraya girin...")
-        self.password_input.setFont(QFont("Calibri", 15))
-        self.layout.addWidget(self.password_input)
-        
-        self.check_password_btn = QPushButton("Parola Güvenliğini Kontrol Et")
-        self.check_password_btn.setFont(QFont("Calibri", 15))
-        self.check_password_btn.clicked.connect(self.check_password)
-        self.layout.addWidget(self.check_password_btn)
-        
-        self.pwned_check_btn = QPushButton("Veri İhlali Kontrolü")
-        self.pwned_check_btn.setFont(QFont("Calibri", 15))
-        self.pwned_check_btn.clicked.connect(self.check_pwned)
-        self.layout.addWidget(self.pwned_check_btn)
-        
-        self.generate_password_btn = QPushButton("Güçlü Parola Önerisi")
-        self.generate_password_btn.setFont(QFont("Calibri", 15)) 
-        self.generate_password_btn.clicked.connect(self.generate_password)
-        self.layout.addWidget(self.generate_password_btn)
-        
-        self.vault_access_btn = QPushButton("Parola Kasa")
-        self.vault_access_btn.setFont(QFont("Calibri", 15))
-        self.vault_access_btn.clicked.connect(self.access_vault)
-        self.layout.addWidget(self.vault_access_btn)
-        
-        self.ai_chat_btn = QPushButton("Shield AI ile Konuş")
-        self.ai_chat_btn.setFont(QFont("Calibri", 15))
-        self.ai_chat_btn.clicked.connect(self.start_ai_chat)
-        self.layout.addWidget(self.ai_chat_btn)
-        
-        self.quit_btn = QPushButton("Çıkış")
-        self.quit_btn.setFont(QFont("Calibri", 15)) 
-        self.quit_btn.clicked.connect(self.close)
-        self.layout.addWidget(self.quit_btn)
-    
-    # Fonksiyonlar:
+        self.log_output.setFont(QFont("Courier", 12))
+        layout.addWidget(self.log_output)
 
-    ## parola kontrol
+        self.setLayout(layout)
+
     def check_password(self):
         password = self.password_input.text()
         if not password:
             QMessageBox.warning(self, "Hata", "Lütfen bir parola giriniz!")
             return
-        
+
         uzunluk, kucuk_harf, buyuk_harf, sayi, karakter = main_module.password_control(password)
         deger = 0
         if uzunluk: deger += 2
@@ -83,7 +106,7 @@ class CipherShieldApp(QMainWindow):
         if buyuk_harf: deger += 2
         if sayi: deger += 2
         if karakter: deger += 3
-        
+
         self.log_output.append(f"Parolanızın güvenlik düzeyi: {deger}/10")
         if deger < 5:
             self.log_output.append("Parolanız çok zayıf.")
@@ -91,46 +114,83 @@ class CipherShieldApp(QMainWindow):
             self.log_output.append("Parolanız kısmen güvenli.")
         else:
             self.log_output.append("Parolanız oldukça güvenli!")
-    
-    ## pwned kontrol
+
     def check_pwned(self):
         password = self.password_input.text()
         if not password:
             QMessageBox.warning(self, "Hata", "Lütfen bir parola giriniz!")
             return
-        
+
         is_pwned = main_module.check(password, "data/pwned.txt")
         if is_pwned:
-            self.log_output.append("Parolanız bir veri ihlalinde açığa çıkmış. Hemen değiştirin!")
+            self.log_output.append("Parolanız bir veri ihlalinde açığa çıkmış!")
         else:
-            self.log_output.append("Parolanız güvende. Hiçbir veri ihlalinde açığa çıkmamış.")
-    
-    ## parola öneri
+            self.log_output.append("Parolanız güvende.")
+
     def generate_password(self):
         new_password = main_module.generate_password()
         self.log_output.append(f"Önerilen Güçlü Parola: {new_password}")
-    
-    ## Kasaya erişim
-    def access_vault(self):
-        while True:
-            passwordExists = os.path.exists("data/VaultPass.txt")
-            if not passwordExists:
-                main_module.create_vault()
-                self.log_output.append("Lütfen bir kasa parolası belirleyiniz. Parolanızın güçlü olduğundan emin olunuz: ")
-                password = self.password_input.text()
-                if not password:
-                    QMessageBox.warning(self, "Hata", "Lütfen bir parola giriniz!")
-                else:
-                    main_module.create_vault_pass()
-                    main_module.write_vault_password(password)
-                        
 
-            else:
-                pass
 
-    ## ShieldAI
-    def start_ai_chat(self):
-        QMessageBox.information(self, "Shield AI", "Shield AI sohbeti şu anda desteklenmiyor. Bu özellik yakında eklenecek!")
+class CipherVaultTab(QWidget):
+    def __init__(self):
+        super().__init__()
+        layout = QVBoxLayout()
+
+        # Başlık
+        self.title = QLabel("CipherVault")
+        self.title.setAlignment(Qt.AlignCenter)
+        self.title.setFont(QFont("Arial", 18, QFont.Bold))
+        layout.addWidget(self.title)
+
+        # Mesaj
+        self.info_label = QLabel("Bu sekme parolalarınızı güvenli bir şekilde saklamanıza yardımcı olur.")
+        self.info_label.setFont(QFont("Arial", 12))
+        layout.addWidget(self.info_label)
+
+        self.setLayout(layout)
+
+
+class ShieldAITab(QWidget):
+    def __init__(self):
+        super().__init__()
+        layout = QVBoxLayout()
+
+        # Başlık
+        self.title = QLabel("ShieldAI - Siber Güvenlik Chatbot")
+        self.title.setAlignment(Qt.AlignCenter)
+        self.title.setFont(QFont("Arial", 18, QFont.Bold))
+        layout.addWidget(self.title)
+
+        # Kullanıcı girişi
+        self.user_input = QLineEdit()
+        self.user_input.setPlaceholderText("Sorunuzu yazın...")
+        self.user_input.setFont(QFont("Arial", 14))
+        layout.addWidget(self.user_input)
+
+        # Yanıt ekranı
+        self.chat_output = QTextEdit()
+        self.chat_output.setReadOnly(True)
+        self.chat_output.setFont(QFont("Courier", 12))
+        layout.addWidget(self.chat_output)
+
+        # Gönder butonu
+        self.send_button = QPushButton("Gönder")
+        self.send_button.setFont(QFont("Arial", 12))
+        self.send_button.clicked.connect(self.send_message)
+        layout.addWidget(self.send_button)
+
+        self.setLayout(layout)
+
+    def send_message(self):
+        user_input = self.user_input.text()
+        if not user_input:
+            QMessageBox.warning(self, "Hata", "Lütfen bir mesaj giriniz!")
+            return
+
+        response = AI_module.get_response(user_input)
+        self.chat_output.append(f"Siz: {user_input}")
+        self.chat_output.append(f"Shield AI: {response}")
 
 
 # Uygulamayı Çalıştır
