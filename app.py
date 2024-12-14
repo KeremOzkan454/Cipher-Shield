@@ -25,8 +25,8 @@ class CipherShieldApp(QMainWindow):
         self.shieldai_tab = ShieldAITab()
 
         self.tabs.addTab(self.password_tab, "Password Control")
-        self.tabs.addTab(self.vault_tab, "CipherVault")
-        self.tabs.addTab(self.shieldai_tab, "ShieldAI")
+        self.tabs.addTab(self.vault_tab, "Cipher Vault")
+        self.tabs.addTab(self.shieldai_tab, "Shield AI")
 
         # Tema renkleri
         self.setStyleSheet("""
@@ -56,9 +56,9 @@ class PasswordControlTab(QWidget):
         layout = QVBoxLayout()
 
         # Başlık
-        self.title = QLabel("Parola Güvenliği Kontrolü")
+        self.title = QLabel("Password Control")
         self.title.setAlignment(Qt.AlignCenter)
-        self.title.setFont(QFont("Arial", 18, QFont.Bold))
+        self.title.setFont(QFont("Arial", 16, QFont.Bold))
         layout.addWidget(self.title)
 
         # Parola girişi
@@ -138,7 +138,7 @@ class CipherVaultTab(QWidget):
         layout = QVBoxLayout()
 
         # Başlık
-        self.title = QLabel("CipherVault")
+        self.title = QLabel("Cipher Vault")
         self.title.setAlignment(Qt.AlignCenter)
         self.title.setFont(QFont("Arial", 18, QFont.Bold))
         layout.addWidget(self.title)
@@ -159,7 +159,7 @@ class ShieldAITab(QWidget):
         # Başlık
         self.title = QLabel("ShieldAI - Siber Güvenlik Chatbot")
         self.title.setAlignment(Qt.AlignCenter)
-        self.title.setFont(QFont("Arial", 18, QFont.Bold))
+        self.title.setFont(QFont("Arial", 16, QFont.Bold))
         layout.addWidget(self.title)
 
         # Kullanıcı girişi
