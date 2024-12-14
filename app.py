@@ -18,7 +18,6 @@ class CipherShieldApp(QMainWindow):
         self.tabs = QTabWidget()
         self.setCentralWidget(self.tabs)
 
-
         self.password_tab = PasswordControlTab()
         self.vault_tab = CipherVaultTab()
         self.shieldai_tab = ShieldAITab()
