@@ -42,3 +42,5 @@ Not: Shield AI hala çalışmıyor...
 - 11/12/2024 --- **Programa GUI ekledim** sonunda. main.py dosyasını app.py dosyasına çevirdim çünkü ismi daha mantıklı geldi. Hala çok kötü bir arayüze sahip olamsına karşın işe yarıyor ve geliştirilmeye açık. (Bunu yarın yapabileceğimden emin değilim gerçi ama) en kısa zamanda GUI'ye Shield AI ile konuşma özelliğini entegre etmek istiyorum.
 -----------------------------------
 - 12/12/2024 --- **Programı birazcık geliştirdim**. Aslında anlatılacak pek birşey yok. GUI elemanlarından bazıları güzel gözükmüyordu onları düzelttim. Ayrıca yazı tipini "Calibri" yaptım.
+-----------------------------------
+- 13/12/2024 --- **GUI** harika olduu!! Cipher Shield uygulamasını sekmeler haline getirdim. "Password Control" , "Cipher vault" ve "Shield AI" sekmeleri var artık. yarın geliştirmeye devam edeceğim çünkü Cipher vault'ta bug çıktı.
