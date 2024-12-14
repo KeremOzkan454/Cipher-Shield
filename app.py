@@ -15,11 +15,10 @@ class CipherShieldApp(QMainWindow):
         self.setWindowTitle("Cipher Shield")
         self.setGeometry(100, 100, 900, 600)
 
-        # Sekmeler için Tab Widget
         self.tabs = QTabWidget()
         self.setCentralWidget(self.tabs)
 
-        # Sekmelerin eklenmesi
+
         self.password_tab = PasswordControlTab()
         self.vault_tab = CipherVaultTab()
         self.shieldai_tab = ShieldAITab()
@@ -28,7 +27,7 @@ class CipherShieldApp(QMainWindow):
         self.tabs.addTab(self.vault_tab, "Cipher Vault")
         self.tabs.addTab(self.shieldai_tab, "Shield AI")
 
-        # Tema renkleri
+        # Tema
         self.setStyleSheet("""
             QTabWidget::pane {
                 border: 1px solid #5DADE2;
@@ -37,8 +36,11 @@ class CipherShieldApp(QMainWindow):
             QTabBar::tab {
                 background: #AED6F1;
                 color: black;
-                padding: 10px;
-                font: bold 14px;
+                padding: 15px;
+                font: bold 16px;  
+                min-width: 160px; 
+                min-height: 20px;  
+                border-radius: 8px; 
             }
             QTabBar::tab:selected {
                 background: #5DADE2;
@@ -58,37 +60,37 @@ class PasswordControlTab(QWidget):
         # Başlık
         self.title = QLabel("Password Control")
         self.title.setAlignment(Qt.AlignCenter)
-        self.title.setFont(QFont("Arial", 16, QFont.Bold))
+        self.title.setFont(QFont("Arimo", 16, QFont.Bold))
         layout.addWidget(self.title)
 
         # Parola girişi
         self.password_input = QLineEdit()
         self.password_input.setPlaceholderText("Parolanızı girin...")
-        self.password_input.setFont(QFont("Arial", 14))
+        self.password_input.setFont(QFont("Arimo", 14))
         layout.addWidget(self.password_input)
 
         # Güvenlik kontrolü butonu
         self.check_password_btn = QPushButton("Parola Güvenliğini Kontrol Et")
-        self.check_password_btn.setFont(QFont("Arial", 12))
+        self.check_password_btn.setFont(QFont("Arimo", 12))
         self.check_password_btn.clicked.connect(self.check_password)
         layout.addWidget(self.check_password_btn)
 
         # Pwned kontrol butonu
         self.pwned_check_btn = QPushButton("Veri İhlali Kontrolü")
-        self.pwned_check_btn.setFont(QFont("Arial", 12))
+        self.pwned_check_btn.setFont(QFont("Arimo", 12))
         self.pwned_check_btn.clicked.connect(self.check_pwned)
         layout.addWidget(self.pwned_check_btn)
 
         # Güçlü parola önerisi butonu
         self.generate_password_btn = QPushButton("Güçlü Parola Önerisi")
-        self.generate_password_btn.setFont(QFont("Arial", 12))
+        self.generate_password_btn.setFont(QFont("Arimo", 12))
         self.generate_password_btn.clicked.connect(self.generate_password)
         layout.addWidget(self.generate_password_btn)
 
         # Log ekranı
         self.log_output = QTextEdit()
         self.log_output.setReadOnly(True)
-        self.log_output.setFont(QFont("Courier", 12))
+        self.log_output.setFont(QFont("Arimo", 12))
         layout.addWidget(self.log_output)
 
         self.setLayout(layout)
@@ -140,12 +142,12 @@ class CipherVaultTab(QWidget):
         # Başlık
         self.title = QLabel("Cipher Vault")
         self.title.setAlignment(Qt.AlignCenter)
-        self.title.setFont(QFont("Arial", 18, QFont.Bold))
+        self.title.setFont(QFont("Arimo", 18, QFont.Bold))
         layout.addWidget(self.title)
 
         # Mesaj
         self.info_label = QLabel("Bu sekme parolalarınızı güvenli bir şekilde saklamanıza yardımcı olur.")
-        self.info_label.setFont(QFont("Arial", 12))
+        self.info_label.setFont(QFont("Arimo", 12))
         layout.addWidget(self.info_label)
 
         self.setLayout(layout)
@@ -159,24 +161,24 @@ class ShieldAITab(QWidget):
         # Başlık
         self.title = QLabel("ShieldAI - Siber Güvenlik Chatbot")
         self.title.setAlignment(Qt.AlignCenter)
-        self.title.setFont(QFont("Arial", 16, QFont.Bold))
+        self.title.setFont(QFont("Arimo", 16, QFont.Bold))
         layout.addWidget(self.title)
 
         # Kullanıcı girişi
         self.user_input = QLineEdit()
         self.user_input.setPlaceholderText("Sorunuzu yazın...")
-        self.user_input.setFont(QFont("Arial", 14))
+        self.user_input.setFont(QFont("Arimo", 14))
         layout.addWidget(self.user_input)
 
         # Yanıt ekranı
         self.chat_output = QTextEdit()
         self.chat_output.setReadOnly(True)
-        self.chat_output.setFont(QFont("Courier", 12))
+        self.chat_output.setFont(QFont("Arimo", 12))
         layout.addWidget(self.chat_output)
 
         # Gönder butonu
         self.send_button = QPushButton("Gönder")
-        self.send_button.setFont(QFont("Arial", 12))
+        self.send_button.setFont(QFont("Arimo", 12))
         self.send_button.clicked.connect(self.send_message)
         layout.addWidget(self.send_button)
 
