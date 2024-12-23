@@ -1,14 +1,7 @@
 {
-    "merhaba": [
-        "Merhaba! Ben, veri güvenliği konusunda size yardımcı olacak bir yapay zekayım. Nasıl yardımcı olabilirim?",
-        "Selam! Siber güvenlik konusunda merak ettiğiniz bir şey varsa sorabilirsiniz."
-    ],
+    "merhaba": "Merhaba! Ben, veri güvenliği konusunda size yardımcı olacak bir yapay zekayım. Nasıl yardımcı olabilirim?",
     
-    "şifre güvenliği": [
-        "Güçlü şifreler oluşturun; en az 12 karakter, büyük/küçük harf, rakam ve özel karakter içermelidir.",
-        "Şifrelerinizi düzenli olarak değiştirin.",
-        "Aynı şifreyi birden fazla hesapta kullanmaktan kaçının."
-    ],
+    "şifre güvenliği": "Şifre güvenliği, kişisel verilerinizi korumak ve hesaplarınızı kötü niyetli kişilere karşı savunmak için oldukça önemlidir. İşte güçlü şifreler oluşturmak ve şifre güvenliğinizi artırmak için bazı ipuçları:\n\n1. Güçlü Şifreler Kullanın:\nUzunluk: Şifreniz en az 12 karakterden oluşmalı.\nKarmaşıklık: Büyük harf, küçük harf, rakam ve özel karakterleri (örneğin, !, @, #, %) içermeli.\nTahmin Edilemezlik: Doğum tarihi, isim veya yaygın kelimeler kullanmaktan kaçının. Rastgele kombinasyonlar daha güvenlidir.\n2. Şifrelerinizi Düzenli Olarak Değiştirin:\nŞifrelerinizi belirli aralıklarla (örneğin, her 3 ayda bir) değiştirin.\n3. Farklı Hesaplar İçin Farklı Şifreler Kullanın:\nAynı şifreyi birden fazla hesapta kullanmak risklidir. Eğer bir hesap ihlal edilirse, diğer hesaplarınız da tehlikeye girebilir.\n4. Şifre Yöneticisi Kullanın:\nŞifrelerinizi hatırlamak zor olabilir. Şifre yöneticileri, tüm şifrelerinizi güvenli bir şekilde saklamanızı sağlar. Bu şekilde, karmaşık ve benzersiz şifreler kullanabilirsiniz.\n5. Çift Faktörlü Kimlik Doğrulama (2FA) Kullanın:\nÇift faktörlü kimlik doğrulama, şifrenizin yanı sıra bir ek doğrulama katmanı ekler (örneğin, telefonunuza gelen bir doğrulama kodu). Bu, hesabınızın güvenliğini büyük ölçüde artırır.\n6. Şifrelerinizi Paylaşmayın:\nŞifrelerinizi kimseyle paylaşmayın. Eğer birinin şifrenize ihtiyacı varsa, güvenli bir şekilde paylaşmak için şifre yöneticisi kullanın.\n7. Şifrelerinizi Güvenli Bir Yerde Saklayın:\nŞifrelerinizi yazılı olarak kağıda dökmek veya basit dosyalarda saklamak tehlikeli olabilir. Şifrelerinizi güvenli bir ortamda saklamak önemlidir.\n8. Kişisel Bilgilerden Kaçının:\nŞifrenizde kişisel bilgiler (örneğin, telefon numarası, isim, adres) kullanmaktan kaçının. Bu tür bilgiler, sosyal mühendislik saldırılarıyla kolayca tahmin edilebilir.\n9. Şifrelerinizi Gösterirken Dikkatli Olun:\nKamuya açık yerlerde, şifrenizi girdiğinizde kimseyi izlememesi için dikkatli olun.\nBu adımlar, şifre güvenliğinizi artırmanıza yardımcı olacaktır. Şifrelerinizi her zaman güçlü ve güvenli tutarak hesaplarınızı koruyabilirsiniz.",
 
     "veri ihlali": [
         "Veri ihlalleri sırasında hesaplarınızı hemen kontrol edin ve şüpheli aktiviteleri rapor edin.",
