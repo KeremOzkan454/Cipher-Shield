@@ -16,7 +16,7 @@ def get_response(user_input):
     # Kullanıcı girdisi kontrolü
 
     if re.search(r"çık|kapat|kapa|çıkış", user_input.lower()):
-        response = False
+	        response = "EXIT"
 
     elif re.search(r"merhaba|selam|hoş geldi|hoş buldu|naber", user_input.lower()):
         response = get_info("merhaba")

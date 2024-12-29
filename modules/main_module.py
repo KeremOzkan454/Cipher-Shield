@@ -6,7 +6,7 @@ import os
 
 # Parola güç kontrolü
 def password_control(parola):
-    uzunluk = len(parola) >= 12
+    uzunluk = len(parola) >= 16
     kucuk_harf = bool(re.search(r"[qwertyuıopğüasdfghjklşizxcvbnmöç]", parola))
     buyuk_harf = bool(re.search(r"[QWERTYUIOPĞÜASDFGHJKLŞİZXCVBNMÖÇ]", parola))
     sayi = bool(re.search(r"[0-9]", parola))
