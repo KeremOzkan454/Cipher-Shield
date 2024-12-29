@@ -28,3 +28,7 @@ Not: Shield AI hala çalışmıyor...
 - 12/12/2024 --- **Programı birazcık geliştirdim**. Aslında anlatılacak pek birşey yok. GUI elemanlarından bazıları güzel gözükmüyordu onları düzelttim. Ayrıca yazı tipini "Calibri" yaptım.
 
 - 13/12/2024 --- **GUI** harika olduu!! Cipher Shield uygulamasını sekmeler haline getirdim. "Password Control" , "Cipher vault" ve "Shield AI" sekmeleri var artık. yarın geliştirmeye devam edeceğim çünkü Cipher vault'ta bug çıktı.
+
+- 28/12/2024 --- **Yaklaşık 2 haftadır commit yapmıyorum** farkındayım. Proje ile uğraşmak beni geçekten yordu, hatalar ile baş etmek, okuldaki sınavlar vs. gerçekten zorlu 2 hafta idi. Projede nelerin değiştiğine gelecek olursak: herşey tastamam çalışıyor, GUI üzerinde değil konsol üzerinde çalışan bir uygulama söz konusu ve ayrıca tübitak aporu da tamamen bitti. Umarım bu proje tüm çalışmalarıma değer (Değmezse de sağlık olsun). 
+
+Evet sanırım bu repoya attığım son commit bu :)
