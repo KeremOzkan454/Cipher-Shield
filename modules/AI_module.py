@@ -10,14 +10,12 @@ def get_info(konu):
             return random.choice(data.get(konu, ["Bu konuda bilgi bulunmamaktadır."]))
     except FileNotFoundError:
         return "Veritabanı bulunamadı."
-    
 
 def get_response(user_input):
     # Kullanıcı girdisi kontrolü
-
     if re.search(r"çık|kapat|kapa|çıkış", user_input.lower()):
-	        response = "EXIT"
-
+	    response = "EXIT"
+            
     elif re.search(r"merhaba|selam|hoş geldi|hoş buldu|naber", user_input.lower()):
         response = get_info("merhaba")
 
